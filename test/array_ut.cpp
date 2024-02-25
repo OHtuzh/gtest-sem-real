@@ -1,3 +1,5 @@
+#include "gtest/gtest.h"
+#include <exception>
 #include <gtest/gtest.h>
 
 #include <gmock/gmock.h>
@@ -24,4 +26,17 @@ TEST(ARRAY_AT, NormalCase) {
 TEST(ARRAY_AT, ExceptionCase) {
     ohtuzh::array<int, 5> arr = {1, 2, 3, 4, 5};
     ASSERT_THROW(arr.at(999), std::out_of_range);
+}
+
+#define MY_ASSERT_ANY_THROW(expr)   \
+    try {                           \
+        expr;                       \
+        ASSERT_TRUE(false);         \
+    } catch(...) {                  \
+        ASSERT_TRUE(true);          \
+    }                               \
+
+TEST(ARRAY_AT, ExceptionCaseWithMyAssert) {
+    ohtuzh::array<int, 5> arr = {1, 2, 3, 4, 5};
+    MY_ASSERT_ANY_THROW(arr.at(999));
 }

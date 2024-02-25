@@ -13,7 +13,7 @@ enable_testing()
 add_executable(
     my-lib-tests
     array_ut.cpp
-    algorithm.cpp
+    algorithm_ut.cpp
 )
 
 target_link_libraries(

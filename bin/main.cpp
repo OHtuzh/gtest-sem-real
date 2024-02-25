@@ -2,13 +2,20 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
+#include <numeric>
+#include <array>
+#include <tuple>
 
 #include "../lib/array.hpp"
 
 
 int main(int argc, char** argv) {
-    ohtuzh::array<int, 3> arr = {1, 2, 3};
-    std::array<int, 4> arr;
 
+    std::tuple<std::vector<int>, int, int> tp>;
+    //              data ^  init ^ result^
+
+    std::cout << std::get<0>(tp) << std::endl;
+    std::cout << std::get<1>(tp) << std::endl;
+    std::cout << std::get<2>(tp) << std::endl;
     return 0;
 }
